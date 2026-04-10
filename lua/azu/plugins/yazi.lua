@@ -1,0 +1,30 @@
+-- ~/.config/nvim/lua/azu/plugins/yazi.lua --  
+
+return {
+  "mikavilpas/yazi.nvim",
+  version = "*", -- use the latest stable version
+  event = "VeryLazy",
+  dependencies = {
+    { "nvim-lua/plenary.nvim", lazy = true },
+  },
+  keys = {
+    {
+      "<leader>ö",
+      mode = { "n", "v" },
+      "<cmd>Yazi<cr>",
+      desc = "Open yazi at the current file",
+    },
+
+  },
+
+  opts = {
+   open_for_directories = false,
+    keymaps = {
+      show_help = "<f1>",
+    },
+  },
+
+  init = function()
+   vim.g.loaded_netrwPlugin = 1
+  end,
+}
