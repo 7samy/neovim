@@ -1,8 +1,6 @@
--- ~/.config/nvim/lua/azu/plugins/yazi.lua --  
-
 return {
   "mikavilpas/yazi.nvim",
-  version = "*", -- use the latest stable version
+  version = "*",
   event = "VeryLazy",
   dependencies = {
     { "nvim-lua/plenary.nvim", lazy = true },
@@ -14,17 +12,15 @@ return {
       "<cmd>Yazi<cr>",
       desc = "Open yazi at the current file",
     },
-
   },
-
   opts = {
-   open_for_directories = false,
+    open_for_directories = false,
+    yazi_cmd = "YAZI_IMAGE_BACKEND=ueberzugpp yazi", -- Hier wird ueberzugpp erzwungen
     keymaps = {
       show_help = "<f1>",
     },
   },
-
   init = function()
-   vim.g.loaded_netrwPlugin = 1
+    vim.g.loaded_netrwPlugin = 1
   end,
 }

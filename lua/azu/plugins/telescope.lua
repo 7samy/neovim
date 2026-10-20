@@ -10,7 +10,7 @@ return {
     config = function()
       local builtin = require('telescope.builtin')
       local actions = require('telescope.actions')
-        
+
       -- Hier definierst du die "Defaults"
       require('telescope').setup({
         defaults = {
@@ -49,13 +49,18 @@ return {
       end, { desc = "Find files in Programming" })
 
 
+      vim.keymap.set("n", "<space>ff", function()
+        builtin.find_files({ cwd = '~/.config/quickshell/' })
+      end, { desc = "Find files in Quickshell" })
+
+
       vim.keymap.set("n", "<space>fc", function()
-        builtin.find_files({ cwd = '~/.config'})
+        builtin.find_files({ cwd = '~/.config' })
       end, { desc = "Find files in Config (General)" })
 
 
       vim.keymap.set("n", "<space>F", function()
-        builtin.find_files({ cwd = vim.fn.expand('%:p:h')})
+        builtin.find_files({ cwd = vim.fn.expand('%:p:h') })
       end, { desc = "Find files in current file's directory" })
 
 
